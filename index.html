@@ -84,18 +84,33 @@
 
         .item-card {
             background: var(--white);
-            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
         }
 
         .item-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
         }
 
         .item-info {
             padding: 20px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .item-info img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 14px;
+            display: block;
         }
 
         .item-info h3 {
@@ -108,12 +123,14 @@
             color: #6b7280;
             font-size: 0.9rem;
             margin-bottom: 15px;
+            flex-grow: 1;
         }
 
         .item-price {
             font-weight: bold;
             color: var(--secondary);
             font-size: 1.05rem;
+            margin-top: auto;
         }
 
         /* Rental Form Section */
@@ -229,16 +246,16 @@
         <section>
             <h2 class="section-title">What We Rent</h2>
             <div class="inventory-grid">
-                <div class="item-card"><div class="item-info"><h3>Canopy</h3><p>Sturdy outdoor canopies.</p><div class="item-price">₦6,000 / day</div></div></div>
-                <div class="item-card"><div class="item-info"><h3>Chairs</h3><p>Comfortable event chairs.</p><div class="item-price">₦150 / piece</div></div></div>
-                <div class="item-card"><div class="item-info"><h3>Tables</h3><p>Clean presentation tables.</p><div class="item-price">₦800 / piece</div></div></div>
-                <div class="item-card"><div class="item-info"><h3>Drums</h3><p>Reliable storage drums.</p><div class="item-price">₦2,000 / piece</div></div></div>
-                <div class="item-card"><div class="item-info"><h3>Coolers</h3><p>Ice-cold drink coolers.</p><div class="item-price">₦1,000 / piece</div></div></div>
-                <div class="item-card"><div class="item-info"><h3>Pot</h3><p>Heavy-duty cooking pots.</p><div class="item-price">₦2,000 / piece</div></div></div>
-                <div class="item-card"><div class="item-info"><h3>Pot Stand</h3><p>Strong metal stands.</p><div class="item-price">₦1,000 / piece</div></div></div>
-                <div class="item-card"><div class="item-info"><h3>Spoon</h3><p>Clean service cutleries.</p><div class="item-price">₦200 / piece</div></div></div>
-                <div class="item-card"><div class="item-info"><h3>Plate</h3><p>Event dining plates.</p><div class="item-price">₦200 / piece</div></div></div>
-                <div class="item-card"><div class="item-info"><h3>Buffet Setup</h3><p>Professional buffet setup.</p><div class="item-price">₦3,000 / set</div></div></div>
+                <div class="item-card"><div class="item-info"><img src="images/canopy.jpg"><h3>Canopy</h3><p>Sturdy outdoor canopies.</p><div class="item-price">₦6,000 / day</div></div></div>
+                <div class="item-card"><div class="item-info"><h3>Chairs</h3><img src="images/chairs.jpg"><p>Comfortable event chairs.</p><div class="item-price">₦150 / piece</div></div></div>
+                <div class="item-card"><div class="item-info"><h3>Tables</h3><img src="images/tables.jpg"><p>Clean presentation tables.</p><div class="item-price">₦800 / piece</div></div></div>
+                <div class="item-card"><div class="item-info"><h3>Drums</h3><img src="images/drum.jpg"><p>Reliable storage drums.</p><div class="item-price">₦2,000 / piece</div></div></div>
+                <div class="item-card"><div class="item-info"><img src="images/coolers.jpg"><h3>Coolers</h3><p>Ice-cold drink coolers.</p><div class="item-price">₦1,000 / piece</div></div></div>
+                <div class="item-card"><div class="item-info"><img src="images/pot.jpg"><h3>Pot</h3><p>Heavy-duty cooking pots.</p><div class="item-price">₦2,000 / piece</div></div></div>
+                <div class="item-card"><div class="item-info"><img src="images/pot stand.jpg"><h3>Pot Stand</h3><p>Strong metal stands.</p><div class="item-price">₦1,000 / piece</div></div></div>
+                <div class="item-card"><div class="item-info"><img src="images/spoon.jpg"><h3>Spoon</h3><p>Clean service cutleries.</p><div class="item-price">₦200 / piece</div></div></div>
+                <div class="item-card"><div class="item-info"><img src="images/plates.jpg"><h3>Plate</h3><p>Event dining plates.</p><div class="item-price">₦200 / piece</div></div></div>
+                <div class="item-card"><div class="item-info"><img src="images/buffet.jpg"><h3>Buffet Setup</h3><p>Professional buffet setup. </p><div class="item-price">₦3,000 / set</div></div></div>
             </div>
         </section>
 
@@ -277,6 +294,7 @@
                     <div class="form-row">
                         <div class="form-group">
                             <label>Canopy (₦6,000 each)</label>
+                            
                             <input type="number" id="qty_canopy" min="0" value="0" oninput="calculateTotal()">
                         </div>
                         <div class="form-group">
